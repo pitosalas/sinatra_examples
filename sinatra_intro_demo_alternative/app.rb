@@ -1,7 +1,8 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-require './models/person'
-require './models/department'
+require_relative './models/person'
+require_relative './models/department'
+require_relative './models/company'
 require 'byebug'
 
 get '/' do
