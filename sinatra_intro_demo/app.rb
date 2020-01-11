@@ -4,7 +4,7 @@ require 'sinatra/activerecord'
 require './models/model'
 
 get '/' do
-	erb :index
+  erb :index
 end
 
 post '/submit' do
@@ -17,6 +17,6 @@ post '/submit' do
 end
 
 get '/models' do
-	@models = Model.all
-	erb :models
+  @models = Model.all
+  erb :models
 end
