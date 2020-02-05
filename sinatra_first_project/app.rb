@@ -1,7 +1,7 @@
-require 'pry-byebug'
 require 'sinatra'
 require 'sinatra/activerecord'
 require_relative 'models/country.rb'
+require_relative 'models/city.rb'
 
 get '/' do
 	erb :index
