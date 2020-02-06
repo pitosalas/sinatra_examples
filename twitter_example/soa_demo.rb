@@ -11,7 +11,9 @@ class SoaDemo
     @queue.establish
     @xface.stream_connect
     @xface.for_each_tweet do
-      |t| @queue.post(@xface.tweet_to_json(t))
+      |t| 
+      puts @xface.tweet_to_json(t)
+      @queue.post(@xface.tweet_to_json(t))
     end
   end
 end
