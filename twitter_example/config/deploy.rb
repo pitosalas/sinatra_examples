@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.2"
 
-set :application, "my_app_name"
+set :application, "soa_demo"
 set :repo_url, "git@example.com:me/my_repo.git"
 
 # Default branch is :master
