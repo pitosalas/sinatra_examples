@@ -1,18 +1,16 @@
 require 'twitter'
 require 'bunny'
 require 'pry-byebug'
-require_relative 'xface_api'
-require_relative 'queue'
+require_relative 'twitter_api'
+require_relative 'tweet_queue'
 
 class SoaSubscriberNode
   def run
-    @xface = XfaceApi.new
-    @queue = Queue.new
+    @xface = TwitterApi.new
+    @queue = TweetQueue.new
     @queue.establish
     @xface.stream_connect
-    @xface.for_each_tweet do |t|
-      @queue.post(@xface.tweet_to_json(t))
-    end
+    @queue.listen
   end
 end
 
